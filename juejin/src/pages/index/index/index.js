@@ -6,8 +6,11 @@
 import React, {useState} from 'react';
 import style from './index.module.css'
 import {connect} from 'react-redux'
-import store from "../../store/index"
-import IndexContent from '../indexContent/index'
+import store from "../../../store"
+import IndexContent from '../indexContent'
+import IndexAd from '../indexAd'
+import {BrowserRouter, Route, Link} from 'react-router-dom'
+import {changeColor} from './action'
 
 import 'antd/dist/antd.css';
 import { Input, Button } from 'antd';
@@ -17,12 +20,19 @@ const { Search } = Input;
 
 const onSearch = value => console.log(value);
 
-function Index() {
-    const [indexTitle, setIndexTitle] = useState(['首页', '沸点', '小册', '活动'])
+function Index(props) {
+    let {indexTitle} = props
     function myTopTitles() {
+        function changeColor(event) {
+            indexTitle[event.currentTarget.getAttribute('index')].active = true
+        }
         return indexTitle.map((v, i) => {
             return (
-                <div key={i} className={style.topLeftCenterItem}>{v}</div>
+                <div key={i} className={style.topLeftCenterItem}>
+                    <BrowserRouter>
+                        <Link index={i} onClick={props.changeColor} className={v.active ? style.link: style.noLink} to={v.path}>{v.name}</Link>
+                    </BrowserRouter>
+                </div>
             )
         })
     }
@@ -57,18 +67,21 @@ function Index() {
                                 placeholder="搜索掘金"
                                 allowClear
                                 onSearch={onSearch}
-                                style={{ width: 200, margin: '0 10px' }}
+                                style={{ width: 200, margin: '0 10px',background:'white' }}
                             />
                         </div>
                         <div className={style.topButton}>
-                            <Button type="primary">写文章</Button>
+                            {/*<Button type="primary">写文章</Button>*/}
+                            <button>写文章</button>
                         </div>
                         <div className={style.topIcon}>
-                            <svg className="icon" aria-hidden="true">
-                                <use style={{width: 200}} xlinkHref="#icon-lingdang"></use>
+                            <svg className={style.icon} aria-hidden="true">
+                                <use style={{width: 200,background: 'white'}} xlinkHref="#icon-lingdang"></use>
                             </svg>
                         </div>
-                        <div className={style.picture}></div>
+                        <div className={style.picture}>
+                            <img className={style.img} src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=249739279,931492192&fm=26&gp=0.jpg" alt=""/>
+                        </div>
                     </div>
                 </div>
                 {/*下面的各个标签类    */}
@@ -77,16 +90,29 @@ function Index() {
                     <div className={style.rightTitle}>标签管理</div>
                 </div>
             </div>
-            <IndexContent/>
+            <div style={{display: 'flex'}}>
+                <IndexContent/>
+                <IndexAd/>
+            </div>
         </div>
     )
 }
 
 function mapStateToProps(state) {
-    return {};
+    return {
+        indexTitle: state.indexTitle
+    };
 }
 
-export default connect(mapStateToProps)(Index)
+const dispatchToProps = (dispatch) => {
+    return {
+        changeColor(event) {
+            dispatch(changeColor(event.currentTarget.getAttribute('index')))
+        }
+    }
+}
+
+export default connect(mapStateToProps, dispatchToProps)(Index)
 
 
 

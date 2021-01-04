@@ -6,7 +6,7 @@
 import React, {useState} from 'react';
 import style from './index.module.css'
 import {connect} from 'react-redux'
-import store from "../../store/index"
+import store from "../../../store"
 
 function Index() {
     // 热门，最新，热榜标题
@@ -33,7 +33,7 @@ function Index() {
     function showList() {
         return myList.map((v, i) => {
             return (
-                <div className={style.items}>
+                <div key={i} className={style.items}>
                     {/*发表人， 日期*/}
                     <div className={style.showName}>
                         {v.name} · {v.time}

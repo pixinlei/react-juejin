@@ -1,0 +1,122 @@
+.page {
+    /*box-shadow:2px 2px 5px #b2bac2;*/
+    width: 100%;
+    height: 100%;
+    /*background: pink;*/
+    margin-top: 40px;
+    margin-left: 40px;
+}
+.topAd {
+    box-shadow:2px 2px 5px #b2bac2;
+    border: 1px solid rgb(245,247,247);
+    width: 100%;
+    height: 130px;
+    background: white;
+    display: flex;
+}
+.ad {
+    width: 130px;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.adTitle {
+    /*flex: 1;*/
+    background: white;
+    margin-left: 10px;
+}
+.bigTitle {
+    background: white;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.smallTitle {
+    background: white;
+    font-size: 15px;
+    color: #b2bac2;
+}
+.goodAuthor {
+    box-shadow:2px 2px 5px #b2bac2;
+    border: 1px solid rgb(245,247,247);
+    margin-top: 40px;
+    width: 100%;
+    height: 400px;
+    /*background: pink;*/
+}
+.goodAuthorTitle {
+    font-size: 15px;
+    height: 50px;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    padding-left: 20px;
+    background: white;
+    border: 1px solid rgb(245,247,247);
+}
+.block {
+    width: 100%;
+    height: 100px;
+    background: white;
+    display: flex;
+}
+.photo {
+    width: 100px;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+img {
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+}
+.myDescription {
+    flex: 1;
+    background: white;
+}
+.titleName {
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    /*justify-content: center;*/
+    color: #333;
+    margin-top: 20px;
+    background: white;
+}
+.myLevel {
+    font-weight: bold;
+    margin-left: 20px;
+    background: rgb(88,157,255);
+    color: white;
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
+    border-radius: 20%;
+}
+.titleDescription {
+    margin-left: 10px;
+    color: #b2bac2;
+    background: white;
+}
+.all {
+    width: 100%;
+    height: 50px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(88,157,255);
+    font-weight: bold;
+    border: 1px solid rgb(245,247,247);
+}

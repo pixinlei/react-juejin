@@ -1,26 +1,31 @@
 .page {
     width: 1200px;
     height: auto;
-    background: pink;
+    background: white;
     margin: auto;
 }
 .head {
+    background: white;
     width: 1200px;
     height: 20vh;
 }
 .top {
+    background: white;
     width: 1200px;
     height: 12vh;
-    background: rebeccapurple;
+    /*background: rebeccapurple;*/
     display: flex;
+    border-bottom: 1px solid #b2bac2;
 }
 .topLeft {
+    background: white;
     width: 600px;
     height: 12vh;
-    background: red;
+    /*background: red;*/
     display: flex;
 }
 .topLeftTitle {
+    background: white;
     width: 100px;
     height: 12vh;
     display: flex;
@@ -38,6 +43,7 @@
     display: flex;
 }
 .topLeftCenterItem {
+    background: #ffffff;
     width: 100px;
     height: 12vh;
     display: flex;
@@ -49,7 +55,7 @@
 .topRight {
     width: 600px;
     height: 12vh;
-    background: red;
+    background: white;
     display: flex;
     align-items: center;
 }
@@ -58,39 +64,86 @@
 }
 .topInput {
     margin-left: 100px;
+    background: white;
 }
 .topButton {
     margin-left: 25px;
+    color: white;
 }
 .picture {
     margin-left: 45px;
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: yellowgreen;
+    /*background: yellowgreen;*/
 }
 .itemType {
+    border-top: 1px solid rgb(245,247,247);
+    border-bottom: 1px solid rgb(245,247,247);
     height: 8vh;
     width: 1200px;
-    background: greenyellow;
+    background: white;
     display: flex;
+    border-bottom: 1px solid rgb(118,141,160);
+    border-top: 1px solid rgb(245,247,247);
+    border-bottom: 1px solid rgb(245,247,247);
 }
 .items {
+    border-top: 1px solid rgb(245,247,247);
+    border-bottom: 1px solid rgb(245,247,247);
     width: 70px;
     height: 8vh;
-    background: pink;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
     color: rgb(118,141,160);
 }
 .rightTitle {
+    border-top: 1px solid rgb(245,247,247);
+    border-bottom: 1px solid rgb(245,247,247);
+    background: white;
     margin-left: 430px;
     width: 70px;
     height: 8vh;
-    background: pink;
+    /*background: pink;*/
     display: flex;
     align-items: center;
     justify-content: center;
     color: rgb(118,141,160);
+}
+.ant-input-suffix {
+    background: white;
+}
+span {
+    background: white;
+}
+button {
+    width: 60px;
+    height: 35px;
+    background: rgb(0,126,255);
+    color: white;
+}
+.icon {
+    background: white;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    font-size: 40px;
+}
+.img {
+    width: 70px;
+    height: 70px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.link {
+    color: #40a9ff;
+}
+.noLink {
+    color: rgb(113,119,134);
 }

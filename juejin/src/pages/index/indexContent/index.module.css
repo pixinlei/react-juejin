@@ -1,19 +1,22 @@
 .page {
     width: 100%;
     height: 100%;
-    background: pink;
+    /*box-shadow:2px 2px 5px #b2bac2;*/
+    /*background: pink;*/
 }
 .content {
+    box-shadow:2px 2px 5px #b2bac2;
     width: 800px;
     height: auto;
-    background: pink;
+    /*background: pink;*/
     margin-top: 40px;
 }
 .contentTitle {
+    box-shadow:2px 2px 5px #b2bac2;
     width: 800px;
     height: 8vh;
     display: flex;
-    border-bottom: 1px solid rgb(118,141,160);
+    border-bottom: 3px solid rgb(245,247,247);
     background: white;
 }
 .contentItem {
@@ -24,29 +27,30 @@
     align-items: center;
     justify-content: center;
     color: rgb(118,141,160);
-    border-bottom: 1px solid rgb(118,141,160);
+    border-bottom: 3px solid rgb(245,247,247);
 }
 .items {
     width: 800px;
     height: 18vh;
-    background: gold;
-    border-bottom: 1px solid rgb(118,141,160);
+    background: white;
+    border-bottom: 3px solid rgb(245,247,247);
 }
 .wrapper {
     display: flex;
 }
 .line {
     width: 0;
-    height: 4vh;
+    height: 3vh;
     margin-top: 2vh;
-    border-right: 1px solid rgb(118,141,160);
+    border-right: 2px solid rgb(245,247,247);
 }
 .showName {
+    padding-top: 10px;
     padding-left: 30px;
     width: 800px;
     height: 30px;
-    background: red;
-    margin-top: 20px;
+    background: white;
+    /*margin-top: 20px;*/
     color: rgb(118,141,160);
     display: flex;
 }
@@ -54,7 +58,7 @@
     padding-left: 30px;
     width: 800px;
     height: 45px;
-    background: greenyellow;
+    background: white;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -69,9 +73,10 @@
     height: 50px;
     display: flex;
     align-items: center;
-    background: rosybrown;
+    background: white;
 }
 .like {
+    background: white;
     height: 30px;
     width: 90px;
     border: 1px solid rgb(118,141,160);
@@ -83,6 +88,7 @@
     font-weight: bold;
 }
 .showComment {
+    background: white;
     color: rgb(118,141,160);
     font-weight: bold;
     border-radius: 5px;
