@@ -9,11 +9,13 @@ import {connect} from 'react-redux'
 import store from "../../../store"
 import IndexContent from '../indexContent'
 import IndexAd from '../indexAd'
+import IndexHome from '../home/index'
 import {BrowserRouter, Route, Link} from 'react-router-dom'
 import {changeColor} from './action'
 
 import 'antd/dist/antd.css';
 import { Input, Button } from 'antd';
+import indexReducer from "./reducer";
 
 const { Search } = Input;
 
@@ -35,17 +37,6 @@ function Index(props) {
                 </div>
             )
         })
-    }
-    const [title, setTitle] = useState(
-        ['推荐', '关注', '后端', '前端', 'Android', 'iOS', '人工智能', '开发工具', '代码人生', '阅读']
-    )
-    // 循环遍历出各个标签类
-    function items() {
-        return (
-            title.map((v, i) => {
-                return <div key={i} className={style.items}>{v}</div>
-            })
-        )
     }
     return (
         <div className={style.page}>
@@ -84,23 +75,16 @@ function Index(props) {
                         </div>
                     </div>
                 </div>
-                {/*下面的各个标签类    */}
-                <div className={style.itemType}>
-                    {items()}
-                    <div className={style.rightTitle}>标签管理</div>
-                </div>
             </div>
-            <div style={{display: 'flex'}}>
-                <IndexContent/>
-                <IndexAd/>
-            </div>
+            {/*<IndexHome/>*/}
+            <Route path="/" component={IndexHome} />
         </div>
     )
 }
 
 function mapStateToProps(state) {
     return {
-        indexTitle: state.indexTitle
+        indexTitle: state.indexReducer.indexTitle
     };
 }
 

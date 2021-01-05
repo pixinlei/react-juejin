@@ -10,9 +10,9 @@ import store from "../../../store"
 
 function Index() {
     const [author, setAuthor] = useState([
-        {name: '华为开发者论坛', level: '3', photo: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa2.att.hudong.com%2F27%2F81%2F01200000194677136358818023076.jpg&refer=http%3A%2F%2Fa2.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612145503&t=d29424ba7267825208cf8a9f97a7f518', description: '华为软件技术有限公司'},
-        {name: '华为开发者论坛', level: '3', photo: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa2.att.hudong.com%2F27%2F81%2F01200000194677136358818023076.jpg&refer=http%3A%2F%2Fa2.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612145503&t=d29424ba7267825208cf8a9f97a7f518', description: '华为软件技术有限公司'},
-        {name: '华为开发者论坛', level: '3', photo: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa2.att.hudong.com%2F27%2F81%2F01200000194677136358818023076.jpg&refer=http%3A%2F%2Fa2.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612145503&t=d29424ba7267825208cf8a9f97a7f518', description: '华为软件技术有限公司'},
+        {name: '华为开发者论坛', level: '3', photo: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1955685196,1680947288&fm=26&gp=0.jpg', description: '华为软件技术有限公司'},
+        {name: '华为开发者论坛', level: '3', photo: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1955685196,1680947288&fm=26&gp=0.jpg', description: '华为软件技术有限公司'},
+        {name: '华为开发者论坛', level: '3', photo: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1955685196,1680947288&fm=26&gp=0.jpg', description: '华为软件技术有限公司'},
     ])
     function topAuthor() {
         return author.map((v, i) => {
@@ -20,7 +20,7 @@ function Index() {
                 <div className={style.block}>
                     {/*左边头像*/}
                     <div className={style.photo}>
-                        <img src={v.photo} alt=""/>
+                        <img className={style.authorPhoto} src={v.photo} alt=""/>
                     </div>
                     {/*右边描述    */}
                     <div className={style.myDescription}>

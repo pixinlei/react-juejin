@@ -1,81 +1,7 @@
 .page {
-    width: 1200px;
-    height: auto;
-    background: white;
-    margin: auto;
-}
-.head {
-    background: white;
-    width: 1200px;
-    height: 12vh;
-}
-.top {
-    background: white;
-    width: 1200px;
-    height: 12vh;
-    /*background: rebeccapurple;*/
-    display: flex;
-    border-bottom: 1px solid #b2bac2;
-}
-.topLeft {
-    background: white;
-    width: 600px;
-    height: 12vh;
-    /*background: red;*/
-    display: flex;
-}
-.topLeftTitle {
-    background: white;
-    width: 100px;
-    height: 12vh;
-    display: flex;
-    font-size: 50px;
-    align-items: center;
-    justify-content: center;
-    color: rgb(26,124,255);
-    font-family: '方正姚bai体';
-    margin-left: 25px;
-    margin-right: 25px;
-}
-.topLeftCenter {
-    flex: 1;
-    background: #fff;
-    display: flex;
-}
-.topLeftCenterItem {
-    background: #ffffff;
-    width: 100px;
-    height: 12vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    color: rgb(118,141,160);
-}
-.topRight {
-    width: 600px;
-    height: 12vh;
-    background: white;
-    display: flex;
-    align-items: center;
-}
-.topIcon {
-    margin-left: 25px;
-}
-.topInput {
-    margin-left: 100px;
-    background: white;
-}
-.topButton {
-    margin-left: 25px;
-    color: white;
-}
-.picture {
-    margin-left: 45px;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    /*background: yellowgreen;*/
+    width: 100%;
+    height: 100%;
+    /*background: pink;*/
 }
 .itemType {
     border-top: 1px solid rgb(245,247,247);
@@ -98,6 +24,17 @@
     align-items: center;
     justify-content: center;
     color: rgb(118,141,160);
+}
+.choose {
+    border-top: 1px solid rgb(245,247,247);
+    border-bottom: 1px solid rgb(245,247,247);
+    width: 70px;
+    height: 8vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(51,153,254);
 }
 .rightTitle {
     border-top: 1px solid rgb(245,247,247);
@@ -146,4 +83,9 @@ button {
 }
 .noLink {
     color: rgb(113,119,134);
+}
+.unfinished {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
 }
