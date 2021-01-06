@@ -9,7 +9,8 @@ const defaultData={
         {name: '沸点', path: '/hot', active: false},
         {name: '小册', path: '/book', active: false},
         {name: '活动', path: '/activity', active: false},
-    ]
+    ],
+    startLogin: false
 }
 let data = (state=defaultData,action) => {
     let newState = JSON.parse(JSON.stringify(state))
@@ -22,6 +23,9 @@ let data = (state=defaultData,action) => {
                     v.active = false
                 }
             })
+            return newState
+        case 'LOGIN':
+            newState.startLogin = true
             return newState
         default:
             return newState

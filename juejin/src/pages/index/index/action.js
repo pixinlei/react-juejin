@@ -4,3 +4,8 @@ export function changeColor(e) {
         value: e
     }
 }
+export function login() {
+    return {
+        type: 'LOGIN',
+    }
+}

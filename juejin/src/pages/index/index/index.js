@@ -11,7 +11,8 @@ import IndexContent from '../indexContent'
 import IndexAd from '../indexAd'
 import IndexHome from '../home/index'
 import {BrowserRouter, Route, Link} from 'react-router-dom'
-import {changeColor} from './action'
+import {changeColor, login} from './action'
+import Login from '../../../components/login/index'
 
 import 'antd/dist/antd.css';
 import { Input, Button } from 'antd';
@@ -23,7 +24,7 @@ const { Search } = Input;
 const onSearch = value => console.log(value);
 
 function Index(props) {
-    let {indexTitle} = props
+    let {indexTitle, startLogin} = props
     function myTopTitles() {
         function changeColor(event) {
             indexTitle[event.currentTarget.getAttribute('index')].active = true
@@ -40,6 +41,10 @@ function Index(props) {
     }
     return (
         <div className={style.page}>
+            {/*登录*/}
+            {
+                startLogin ? <Login/>: ''
+            }
             {/*    头部部分*/}
             <div className={style.head}>
                 {/*顶部几大类和搜索框*/}
@@ -71,7 +76,8 @@ function Index(props) {
                             </svg>
                         </div>
                         <div className={style.picture}>
-                            <img className={style.img} src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=249739279,931492192&fm=26&gp=0.jpg" alt=""/>
+                            <div className={style.login} onClick={props.login}>登录</div>
+                            {/*<img className={style.img} src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=249739279,931492192&fm=26&gp=0.jpg" alt=""/>*/}
                         </div>
                     </div>
                 </div>
@@ -84,7 +90,8 @@ function Index(props) {
 
 function mapStateToProps(state) {
     return {
-        indexTitle: state.indexReducer.indexTitle
+        indexTitle: state.indexReducer.indexTitle,
+        startLogin: state.indexReducer.startLogin
     };
 }
 
@@ -92,6 +99,9 @@ const dispatchToProps = (dispatch) => {
     return {
         changeColor(event) {
             dispatch(changeColor(event.currentTarget.getAttribute('index')))
+        },
+        login() {
+            dispatch(login())
         }
     }
 }

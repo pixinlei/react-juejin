@@ -70,11 +70,27 @@
     margin-left: 25px;
     color: white;
 }
+.login {
+    margin-top: 15px;
+    width: 60px;
+    height: 35px;
+    background: white;
+    border: 1px solid rgb(0,126,255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    border-radius: 10%;
+    font-size: 17px;
+    color: rgb(0,126,255);
+    /*font-weight: bold;*/
+}
 .picture {
     margin-left: 45px;
     width: 70px;
     height: 70px;
-    border-radius: 50%;
+    background: white;
     /*background: yellowgreen;*/
 }
 .itemType {
