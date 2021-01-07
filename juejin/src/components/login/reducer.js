@@ -4,9 +4,17 @@
 * description: index的reducer文件
 *  */
 const defaultData={
-
+    turnToRegister: false,
+    isLogin: false
 }
 let data = (state=defaultData,action) => {
-    return state
+    let newState = JSON.parse(JSON.stringify(state))
+    switch (action.type) {
+        case 'CHANGE_PAGE':
+            newState.turnToRegister = !newState.turnToRegister
+            return newState
+        default:
+            return newState
+    }
 };
 export default data

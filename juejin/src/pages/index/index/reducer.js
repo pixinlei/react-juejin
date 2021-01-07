@@ -27,6 +27,9 @@ let data = (state=defaultData,action) => {
         case 'LOGIN':
             newState.startLogin = true
             return newState
+        case 'CLOSE_PAGE':
+            newState.startLogin = false
+            return newState
         default:
             return newState
     }
