@@ -3,20 +3,21 @@
 * day: 2020-12-31
 * description: index首页文件
 *  */
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import style from './index.module.css'
 import {connect} from 'react-redux'
 import store from "../../../store"
 import IndexContent from '../indexContent'
 import IndexAd from '../indexAd'
 import IndexHome from '../home/index'
-import {BrowserRouter, Route, Link} from 'react-router-dom'
+import {BrowserRouter, Route, Link, useLocation} from 'react-router-dom'
 import {changeColor, login} from './action'
 import Login from '../../../components/login/index'
 
 import 'antd/dist/antd.css';
 import { Input, Button } from 'antd';
 import indexReducer from "./reducer";
+import axios from "axios";
 
 const { Search } = Input;
 
@@ -24,7 +25,36 @@ const { Search } = Input;
 const onSearch = value => console.log(value);
 
 function Index(props) {
-    let {indexTitle, startLogin} = props
+    let location = useLocation()
+
+    let {indexTitle, startLogin, loginSuccess} = props
+    useEffect(async () => {
+        let githubCode = location.search.slice(6)
+        githubCode = githubCode.slice(0,20)
+        console.log(githubCode)
+        axios({
+            method: 'post',
+            url:'http://localhost:3000/list/git',
+            data: {
+                code: githubCode
+            }
+        }).then(res => {
+            console.log(res)
+        })
+        if(localStorage.getItem("userData")) {
+            if(loginSuccess === false) {
+                props.changeLoginType()
+            }
+        }
+    }, [])
+
+    // 退出登录
+    function loginOut() {
+        if (loginSuccess === true) {
+            props.changeLoginType()
+            localStorage.removeItem('userData')
+        }
+    }
     function myTopTitles() {
         function changeColor(event) {
             indexTitle[event.currentTarget.getAttribute('index')].active = true
@@ -76,8 +106,9 @@ function Index(props) {
                             </svg>
                         </div>
                         <div className={style.picture}>
-                            <div className={style.login} onClick={props.login}>登录</div>
-                            {/*<img className={style.img} src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=249739279,931492192&fm=26&gp=0.jpg" alt=""/>*/}
+                            {
+                                loginSuccess ? <img onClick={loginOut} className={style.img} src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=249739279,931492192&fm=26&gp=0.jpg" alt=""/> : <div className={style.login} onClick={props.login}>登录</div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -91,7 +122,8 @@ function Index(props) {
 function mapStateToProps(state) {
     return {
         indexTitle: state.indexReducer.indexTitle,
-        startLogin: state.indexReducer.startLogin
+        startLogin: state.indexReducer.startLogin,
+        loginSuccess: state.indexReducer.loginSuccess
     };
 }
 
@@ -102,6 +134,11 @@ const dispatchToProps = (dispatch) => {
         },
         login() {
             dispatch(login())
+        },
+        changeLoginType() {
+            dispatch({
+                type: 'CHANGE_LOGIN_TYPE',
+            })
         }
     }
 }

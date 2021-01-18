@@ -13,3 +13,9 @@ export function closePage() {
         }
     )
 }
+
+export function myChangeLoginType() {
+    return {
+        type: 'CHANGE_LOGIN_TYPE',
+    }
+}

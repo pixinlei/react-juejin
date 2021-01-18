@@ -163,3 +163,12 @@ button {
 .noLink {
     color: rgb(113,119,134);
 }
+.loginOut {
+    z-index: 1000;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
